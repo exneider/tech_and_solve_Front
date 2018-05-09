@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <span class="btn btn-primary btn-file">
+    <span class="fa fa-file-o"></span> Seleccionar archivo
+    <input type="file" accept=".txt" [id]="propiedades.id" (change)="onFileChange($event)" #fileInput>
+  </span>
+  <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">Limpiar</button>
+  <br/> 
+  <label>{{propiedades.nombre}}</label>
+</form>

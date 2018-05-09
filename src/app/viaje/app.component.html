@@ -1,0 +1,30 @@
+<spinner backgroundColor="#e63078" spinner="sk-three-bounce">
+</spinner>
+<div class="container-fluid">
+    <div class="form-body">
+  <div class="align-center">
+    <form #form="ngForm" class="form-class">
+          <app-alert></app-alert>
+        <div class="form-group">
+          <div class="col-md-12">
+            <label for="documento"> 
+                <i class="required">* </i> Número de documento:</label>
+            <input type="text" class="form-control" [(ngModel)]="viaje._cedulaUsuario" id="documento" name="documento" required #documento="ngModel"
+              placeholder="Numero de documento" [ngClass]="{'border-required': documento.errors && cargar}" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <app-uploadfile [propiedades]="datosArchivo" (archivo)="obtenerArchivo($event)"></app-uploadfile>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <button [disabled]="!datosArchivo.valor || !form.form.valid" (click)="cargarArchivo()" class="btn btn-block btn-success">Cargar</button>
+          </div>
+        </div>
+ 
+    </form>
+  </div>
+  </div>
+</div>
